@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SingletonMonoBehavior<T> : MonoBehaviour where T : SingletonMonoBehavior<T>
+public abstract class SceneSingletonMonoBehavior<T> : MonoBehaviour where T : SceneSingletonMonoBehavior<T>
 {
     private static T _instance;
     
@@ -32,6 +32,5 @@ public class SingletonMonoBehavior<T> : MonoBehaviour where T : SingletonMonoBeh
         }
 
         _instance = this as T;
-        DontDestroyOnLoad(this.gameObject);
     }
 }
